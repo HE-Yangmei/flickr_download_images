@@ -2,7 +2,7 @@ import flickrapi
 import urllib.request
 import os
 
-project_path = '/home/harrysha/Desktop/flickr_download_images'
+project_path = '/path/flickr_download_images'
 photos_per_tag = 5
 filenames = ['Category1.txt', 'Category2.txt']
 
