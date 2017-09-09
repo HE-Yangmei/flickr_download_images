@@ -2,10 +2,9 @@ import flickrapi
 import urllib.request
 import os
 
-project_path = '/Users/harrys/Desktop/Flick'
+project_path = '/home/harrysha/Desktop/flickr_download_images'
 photos_per_tag = 5
-filenames = ['Awe.txt', 'Happiness.txt', 'Fear.txt', 'Determination.txt',
-             'Anxiety.txt', 'Tranquility.txt', 'Sadness.txt']
+filenames = ['Category1.txt', 'Category2.txt']
 
 
 def download_files(flickr, t, category, num_photos):
@@ -28,8 +27,8 @@ def download_files(flickr, t, category, num_photos):
 if __name__ == '__main__':
     # Creates flickr object
     # These keys should be requested from flickr
-    api_key = u'd7aecfde9fed33b295dd859d58fe9623'
-    api_secret = u'9b936fe3b7ca7fdb'
+    api_key = u'replace_with_your_api_key'
+    api_secret = u'replace_with_your_api_secret_key'
     flickr = flickrapi.FlickrAPI(api_key, api_secret)
 
     # Runs the program, cycles through the emotions and downloads the images for each tag.
