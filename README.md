@@ -7,4 +7,4 @@ Edit the text files with tags (one per line).
 
 You can change the name of the text files to be the actual name of your category.
 
-You'll also need to edit the three variables to suit your needs.
+You'll also need to edit the three variables at the top of flick.py to suit your needs.
