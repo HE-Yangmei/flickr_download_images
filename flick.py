@@ -5,7 +5,7 @@ import os
 # Change the follwing variables to match your own needs
 project_path = 'watercolor/'
 photos_per_tag = 500
-filenames = ['wf.txt', 'cat.txt']
+filenames = ['watercolor_flower.txt', 'cat.txt']
 
 
 def download_files(flickr, t, category, num_photos):
@@ -20,7 +20,7 @@ def download_files(flickr, t, category, num_photos):
         if len(s) == num_photos:
             break
     for i in range(len(s)):
-        filename = '{}_{}_{}.jpg'.format(category, t, str(i))
+        filename = '{}_{}.jpg'.format(t, str(i))
         urllib.request.urlretrieve(s[i], filename)
     os.chdir(os.path.join(project_path, category))
 
