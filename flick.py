@@ -3,9 +3,9 @@ import urllib.request
 import os
 
 # Change the follwing variables to match your own needs
-project_path = '/path/flickr_download_images'
-photos_per_tag = 5
-filenames = ['Category1.txt', 'Category2.txt']
+project_path = 'watercolor/'
+photos_per_tag = 500
+filenames = ['watercolor_flower.txt', 'Category2.txt']
 
 
 def download_files(flickr, t, category, num_photos):
