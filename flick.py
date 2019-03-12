@@ -5,7 +5,7 @@ import os
 # Change the follwing variables to match your own needs
 project_path = 'watercolor/'
 photos_per_tag = 500
-filenames = ['watercolor_flower.txt', 'Category2.txt']
+filenames = ['flickr_download_images/watercolor_flower.txt', 'flickr_download_images/Category2.txt']
 
 
 def download_files(flickr, t, category, num_photos):
@@ -28,18 +28,18 @@ def download_files(flickr, t, category, num_photos):
 if __name__ == '__main__':
     # Creates flickr object
     # These keys should be requested from flickr
-    api_key = u'replace_with_your_api_key'
-    api_secret = u'replace_with_your_api_secret_key'
+    api_key = u'c0eadeb742d657f4e119f176812ed91d'
+    api_secret = u'a1d7e391b1a8f470'
     flickr = flickrapi.FlickrAPI(api_key, api_secret)
 
     # Runs the program, cycles through the emotions and downloads the images for each tag.
     os.chdir(project_path)
     for fname in filenames:
-        categ = fname[:-4]
+        watercoloreg = fname[:-4]
         with open(fname, 'r') as f:
             tags = f.read().splitlines()
-        os.mkdir(categ)
-        os.chdir(categ)
+        os.mkdir(watercoloreg)
+        os.chdir(watercolorg)
         for t in tags:
-            download_files(flickr, t, categ, photos_per_tag)
+            download_files(flickr, t, watercoloreg, photos_per_tag)
         os.chdir(project_path)
