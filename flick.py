@@ -13,7 +13,7 @@ def download_files(flickr, t, category, num_photos):
     os.mkdir(t)
     os.chdir(t)
     s = []
-    for photo in flickr.walk(tag_mode='all', sort='relevance', tags=t, license=4, per_page=50):
+    for photo in flickr.walk(tag_mode='all', sort='relevance', tags=t, license=4, per_page=100):
         url = 'https://farm{}.staticflickr.com/{}/{}_{}.jpg'.format(photo.get('farm'),
                              photo.get('server'), photo.get('id'), photo.get('secret'))
         s.append(url)
