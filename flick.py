@@ -5,7 +5,7 @@ import os
 # Change the follwing variables to match your own needs
 project_path = 'watercolor/'
 photos_per_tag = 500
-filenames = ['watercolor_flower.txt', 'Category2.txt']
+filenames = ['watercolor_flower.txt', 'cat.txt']
 
 
 def download_files(flickr, t, category, num_photos):
