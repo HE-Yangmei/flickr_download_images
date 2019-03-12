@@ -39,7 +39,7 @@ if __name__ == '__main__':
         with open(fname, 'r') as f:
             tags = f.read().splitlines()
         os.mkdir(watercoloreg)
-        os.chdir(watercolorg)
+        os.chdir(watercoloreg)
         for t in tags:
             download_files(flickr, t, watercoloreg, photos_per_tag)
         os.chdir(project_path)
