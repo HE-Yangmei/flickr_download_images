@@ -13,7 +13,7 @@ def download_files(flickr, t, category, num_photos):
     os.mkdir(t)
     os.chdir(t)
     s = []
-    for photo in flickr.walk(tag_mode='all', sort='relevance', tags=t, license=4, per_page=100):
+    for photo in flickr.walk(tag_mode='all', sort='relevance', tags=t, license=4, per_page=50):
         url = 'https://farm{}.staticflickr.com/{}/{}_{}.jpg'.format(photo.get('farm'),
                              photo.get('server'), photo.get('id'), photo.get('secret'))
         s.append(url)
@@ -35,11 +35,11 @@ if __name__ == '__main__':
     # Runs the program, cycles through the emotions and downloads the images for each tag.
     os.chdir(project_path)
     for fname in filenames:
-        tagseg = fname[:-4]
+        imgeg = fname[:-4]
         with open(fname, 'r') as f:
             tags = f.read().splitlines()
-        os.mkdir(tagseg)
-        os.chdir(tagseg)
+        os.mkdir(imgeg)
+        os.chdir(imgeg)
         for t in tags:
-            download_files(flickr, t, tagseg, photos_per_tag)
+            download_files(flickr, t, imgeg, photos_per_tag)
         os.chdir(project_path)
