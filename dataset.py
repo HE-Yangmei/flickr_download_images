@@ -5,7 +5,7 @@ import os
 # Change the follwing variables to match your own needs
 project_path = 'img/'
 photos_per_tag = 1000
-filenames = ['tags.txt', 'cat.txt']
+filenames = ['img.txt', 'cat.txt']
 
 
 def download_files(flickr, t, category, num_photos):
