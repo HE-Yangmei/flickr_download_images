@@ -3,7 +3,7 @@ import urllib.request
 import os
 
 # Change the follwing variables to match your own needs
-project_path = 'watercolor/'
+project_path = 'flickr_download_images/'
 photos_per_tag = 500
 filenames = ['watercolor_flower.txt', 'cat.txt']
 
