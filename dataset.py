@@ -35,11 +35,11 @@ if __name__ == '__main__':
     # Runs the program, cycles through the emotions and downloads the images for each tag.
     os.chdir(project_path)
     for fname in filenames:
-        imgeg = fname[:-4]
+        tagseg = fname[:-4]
         with open(fname, 'r') as f:
             tags = f.read().splitlines()
-        os.mkdir(imgeg)
-        os.chdir(imgeg)
+        os.mkdir(tagseg)
+        os.chdir(tagseg)
         for t in tags:
-            download_files(flickr, t, imgeg, photos_per_tag)
+            download_files(flickr, t, tagseg, photos_per_tag)
         os.chdir(project_path)
