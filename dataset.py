@@ -3,7 +3,7 @@ import urllib.request
 import os
 
 # Change the follwing variables to match your own needs
-project_path = 'dataset/'
+project_path = 'flower/'
 photos_per_tag = 500
 filenames = ['flower.txt', 'cat.txt']
 
