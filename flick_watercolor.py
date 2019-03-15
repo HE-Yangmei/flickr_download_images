@@ -20,7 +20,7 @@ def download_files(flickr, t, category, num_photos):
         if len(s) == num_photos:
             break
     for i in range(len(s)):
-        filename = '{}_{}.jpg'.format(t, str(i))
+        filename = '{}_{}.jpg'.format(category, str(i))
         urllib.request.urlretrieve(s[i], filename)
     os.chdir(os.path.join(project_path, category))
 
