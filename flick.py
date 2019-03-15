@@ -40,6 +40,6 @@ if __name__ == '__main__':
             texts = f.read().splitlines()
         os.mkdir(categ)
         os.chdir(categ)
-        for t in tags:
-            download_files(flickr, t, flowereg, photos_per_tag)
+        for t in texts:
+            download_files(flickr, t, categ, photos_per_tag)
         os.chdir(project_path)
