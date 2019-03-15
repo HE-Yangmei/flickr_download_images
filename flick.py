@@ -41,5 +41,5 @@ if __name__ == '__main__':
         os.mkdir(categ)
         os.chdir(categ)
         for t in texts:
-            download_files(flickr, t, categ, photos_per_tag)
+            download_files(flickr, t, categ, photos_per_text)
         os.chdir(project_path)
