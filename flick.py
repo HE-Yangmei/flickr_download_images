@@ -4,8 +4,8 @@ import os
 
 # Change the follwing variables to match your own needs
 project_path = 'Dataset/'
-photos_per_text = 1000
-filenames = ['flower.txt', 'watercolor.txt', 'vase.txt']
+photos_per_text = 1500
+filenames = ['watercolor.txt']
 
 
 def download_files(flickr, t, category, num_photos):
@@ -20,7 +20,7 @@ def download_files(flickr, t, category, num_photos):
         if len(s) == num_photos:
             break
     for i in range(len(s)):
-        filename = '{}_{}.jpg'.format(t, str(i))
+        filename = '{}_{}.jpg'.format(category, str(i))
         urllib.request.urlretrieve(s[i], filename)
     os.chdir(os.path.join(project_path, category))
 
