@@ -12,4 +12,6 @@ You'll also need to edit the three variables at the top of flick.py to suit your
 Don't forget to change the api_key and api_secret to your keys! (These need to be requested from flickr)
 
 
-flickr api usage:https://www.flickr.com/services/api/
+## flickr api usage
+
+https://www.flickr.com/services/api/
