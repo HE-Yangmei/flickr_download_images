@@ -3,24 +3,24 @@ import urllib.request
 import os
 
 # Change the follwing variables to match your own needs
-project_path = 'vase/'
-photos_per_tag = 500
-filenames = ['vase.txt', 'cat.txt']
+project_path = 'Dataset/'
+photos_per_text = 1000
+filenames = ['flower.txt', 'watercolor.txt', 'vase.txt']
 
 
 def download_files(flickr, t, category, num_photos):
-    # Downloads the files of a specific tag
+    # Downloads the files of a specific text
     os.mkdir(t)
     os.chdir(t)
     s = []
-    for photo in flickr.walk(tag_mode='all', sort='relevance', tags=t, license=4, per_page=50):
+    for photo in flickr.photos_search(api_key = 'c0eadeb742d657f4e119f176812ed91d', text = t, sort='relevance', page = 50):
         url = 'https://farm{}.staticflickr.com/{}/{}_{}.jpg'.format(photo.get('farm'),
                              photo.get('server'), photo.get('id'), photo.get('secret'))
         s.append(url)
         if len(s) == num_photos:
             break
     for i in range(len(s)):
-        filename = '{}_{}_{}.jpg'.format(category, t, str(i))
+        filename = '{}_{}.jpg'.format(t, str(i))
         urllib.request.urlretrieve(s[i], filename)
     os.chdir(os.path.join(project_path, category))
 
@@ -32,14 +32,14 @@ if __name__ == '__main__':
     api_secret = u'a1d7e391b1a8f470'
     flickr = flickrapi.FlickrAPI(api_key, api_secret)
 
-    # Runs the program, cycles through the emotions and downloads the images for each tag.
+    # Runs the program, cycles through the emotions and downloads the images for each text.
     os.chdir(project_path)
     for fname in filenames:
-        flowereg = fname[:-4]
+        categ = fname[:-4]
         with open(fname, 'r') as f:
-            tags = f.read().splitlines()
-        os.mkdir(flowereg)
-        os.chdir(flowereg)
-        for t in tags:
-            download_files(flickr, t, flowereg, photos_per_tag)
+            texts = f.read().splitlines()
+        os.mkdir(categ)
+        os.chdir(categ)
+        
+        download_files(flickr, texts, categ, photos_per_text)
         os.chdir(project_path)
