@@ -3,9 +3,9 @@ import urllib.request
 import os
 
 # Change the follwing variables to match your own needs
-project_path = 'flickr_download_images/'
-photos_per_tag = 5
-filenames = ['Category1.txt', 'Category2.txt']
+project_path = 'flower/'
+photos_per_tag = 1000
+filenames = ['flower.txt', 'cat.txt']
 
 
 def download_files(flickr, t, category, num_photos):
@@ -35,11 +35,11 @@ if __name__ == '__main__':
     # Runs the program, cycles through the emotions and downloads the images for each tag.
     os.chdir(project_path)
     for fname in filenames:
-        categ = fname[:-4]
+        flowereg = fname[:-4]
         with open(fname, 'r') as f:
             tags = f.read().splitlines()
-        os.mkdir(categ)
-        os.chdir(categ)
+        os.mkdir(flowereg)
+        os.chdir(flowereg)
         for t in tags:
-            download_files(flickr, t, categ, photos_per_tag)
+            download_files(flickr, t, flowereg, photos_per_tag)
         os.chdir(project_path)
