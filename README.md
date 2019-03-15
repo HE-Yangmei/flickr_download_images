@@ -10,3 +10,6 @@ You can change the name of the text files to be the actual name of your category
 You'll also need to edit the three variables at the top of flick.py to suit your needs.
 
 Don't forget to change the api_key and api_secret to your keys! (These need to be requested from flickr)
+
+
+flickr api usage:https://www.flickr.com/services/api/
