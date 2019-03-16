@@ -4,8 +4,8 @@ import os
 
 # Change the follwing variables to match your own needs
 project_path = 'Dataset/'
-photos_per_text = 1500
-filenames = ['watercolor.txt']
+photos_per_text = 500
+filenames = ['vase.txt']
 
 
 def download_files(flickr, t, category, num_photos):
